@@ -1,0 +1,31 @@
+{
+  "summary": "The overall system health is currently compromised due to two critical failure clusters. The first cluster, characterized by high-severity timeout issues during user actions, significantly impacts user experience and system responsiveness. The second cluster involves high-severity invalid currency errors during transactions, which poses a serious risk to financial operations and user trust. Engineering teams should prioritize addressing these timeout issues and transaction errors to restore system reliability and enhance user satisfaction. Immediate action is essential to mitigate these risks and improve overall system performance.",
+  "totalFailures": 4,
+  "criticalCount": 0,
+  "highCount": 2,
+  "mediumCount": 0,
+  "lowCount": 0,
+  "topPriorityCluster": "cluster-1",
+  "clusters": [
+    {
+      "clusterId": "cluster-1",
+      "pattern": "timeout issues during user actions",
+      "rootCause": "The timeout issues during user actions in Test-1 and Test-2 are likely caused by performance bottlenecks in the application, which may stem from inefficient code execution, resource contention, or inadequate server capacity. These factors can lead to delays in processing user requests, resulting in timeouts. Further investigation into system logs and performance metrics during the tests is necessary to identify the specific underlying causes.",
+      "severity": "HIGH",
+      "affectedTests": [
+        "Test-1",
+        "Test-2"
+      ]
+    },
+    {
+      "clusterId": "cluster-2",
+      "pattern": "invalid currency errors during transactions",
+      "rootCause": "The root cause of the invalid currency errors during transactions in Test-3 and Test-4 is likely due to a mismatch between the currency format expected by the transaction processing system and the currency data being provided in the test cases. This could stem from incorrect currency codes, formatting issues, or unsupported currency types in the test inputs, leading to failures in transaction validation.",
+      "severity": "HIGH",
+      "affectedTests": [
+        "Test-3",
+        "Test-4"
+      ]
+    }
+  ]
+}

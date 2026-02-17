@@ -1,0 +1,31 @@
+{
+  "summary": "The overall system health is currently compromised due to two critical failure clusters. The first cluster, characterized by high-severity timeout issues during user actions, significantly impacts user experience and system responsiveness. The second cluster involves high-severity invalid currency errors during transactions, which poses a risk to financial integrity and user trust. Engineering priority should focus on resolving these timeout issues and addressing the currency validation process to restore system reliability and enhance user satisfaction. Immediate action is essential to mitigate these high-impact issues and improve overall system performance.",
+  "totalFailures": 4,
+  "criticalCount": 0,
+  "highCount": 2,
+  "mediumCount": 0,
+  "lowCount": 0,
+  "topPriorityCluster": "cluster-1",
+  "clusters": [
+    {
+      "clusterId": "cluster-1",
+      "pattern": "timeout issues during user actions",
+      "rootCause": "The root cause of the timeout issues during user actions in Test-1 and Test-2 is likely due to insufficient system resources or performance bottlenecks. This could be caused by high server load, inefficient code execution, or database query delays, leading to prolonged response times that exceed the timeout thresholds set for user actions. Further investigation into system performance metrics and resource utilization during the tests is recommended to confirm this.",
+      "severity": "HIGH",
+      "affectedTests": [
+        "Test-1",
+        "Test-2"
+      ]
+    },
+    {
+      "clusterId": "cluster-2",
+      "pattern": "invalid currency errors during transactions",
+      "rootCause": "The root cause of the invalid currency errors during transactions in Test-3 and Test-4 is likely due to incorrect currency formatting or validation logic within the transaction processing system. This could involve issues such as unsupported currency codes, improper handling of decimal places, or mismatches between the expected currency type and the input provided by users. Further investigation into the specific transaction data and validation rules applied during these tests is necessary to confirm the exact source of the errors.",
+      "severity": "HIGH",
+      "affectedTests": [
+        "Test-3",
+        "Test-4"
+      ]
+    }
+  ]
+}

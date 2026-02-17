@@ -1,0 +1,31 @@
+{
+  "summary": "The overall system health is currently at risk due to critical issues identified in two failure clusters. The most pressing concern is Cluster 1, which has a high severity level attributed to timeouts, indicating potential performance bottlenecks that need immediate attention. Additionally, Cluster 2 presents a medium severity issue related to invalid currency failures, which could impact user transactions and overall user experience. Engineering should prioritize addressing the timeout failures in Cluster 1 to enhance system reliability, followed by resolving the currency validation issues in Cluster 2 to ensure transactional integrity. Immediate action in these areas is essential to maintain system stability and user satisfaction.",
+  "totalFailures": 4,
+  "criticalCount": 0,
+  "highCount": 1,
+  "mediumCount": 1,
+  "lowCount": 0,
+  "topPriorityCluster": "cluster-1",
+  "clusters": [
+    {
+      "clusterId": "cluster-1",
+      "pattern": "failure due to timeout",
+      "rootCause": "The root cause of the failures in Test-1 and Test-2 is attributed to timeouts occurring during execution. This indicates that the tests are not completing within the expected time frame, likely due to performance issues or resource constraints in the system under test. Further investigation is needed to identify specific bottlenecks or inefficiencies that are causing these timeouts.",
+      "severity": "HIGH",
+      "affectedTests": [
+        "Test-1",
+        "Test-2"
+      ]
+    },
+    {
+      "clusterId": "cluster-2",
+      "pattern": "failure due to invalid currency",
+      "rootCause": "The root cause of the failures in Test-3 and Test-4 is the handling of invalid currency inputs. Both tests encountered scenarios where the system did not properly validate or process currency values, leading to errors. This indicates a gap in input validation mechanisms for currency data, resulting in the observed failures.",
+      "severity": "MEDIUM",
+      "affectedTests": [
+        "Test-3",
+        "Test-4"
+      ]
+    }
+  ]
+}
