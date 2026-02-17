@@ -11,7 +11,8 @@ app.get("/health", (_req, res) => {
   res.json({ status: "OK" });
 });
 
-const PORT = 3000;
+// ✅ FIX: Use dynamic port for Render
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`🚀 QA Copilot API running on port ${PORT}`);
