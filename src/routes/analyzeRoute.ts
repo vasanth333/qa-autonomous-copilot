@@ -2,11 +2,10 @@ import { Router, Request, Response } from 'express';
 
 const router = Router();
 
-router.post('/api/analyze', async (req: Request, res: Response) => {
+router.post('/analyze', async (req: Request, res: Response) => {
   try {
     const { projectName, environment, failures } = req.body;
 
-    // 🔥 SIMPLE VALIDATION (NO STRICT SCHEMA)
     if (
       !projectName ||
       !environment ||
@@ -18,7 +17,6 @@ router.post('/api/analyze', async (req: Request, res: Response) => {
       });
     }
 
-    // Optional: ensure failures have minimum structure
     const normalizedFailures = failures.map((f: any) => ({
       testName: f.testName || 'Unknown Test',
       filePath: f.filePath || '',
@@ -28,7 +26,6 @@ router.post('/api/analyze', async (req: Request, res: Response) => {
       status: f.status || 'failed'
     }));
 
-    // 🔥 BASIC RISK SCORING LOGIC
     const riskScore = Math.min(100, normalizedFailures.length * 30);
 
     const severity =
