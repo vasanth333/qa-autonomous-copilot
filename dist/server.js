@@ -9,6 +9,16 @@ const analyzeRoute_js_1 = __importDefault(require("./routes/analyzeRoute.js"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use("/api", analyzeRoute_js_1.default);
+app.get("/", (_req, res) => {
+    res.json({
+        service: "QA Autonomous Copilot API",
+        status: "Running",
+        endpoints: {
+            health: "/health",
+            analyze: "POST /api/analyze"
+        }
+    });
+});
 app.get("/health", (_req, res) => {
     res.json({ status: "OK" });
 });

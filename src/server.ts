@@ -7,6 +7,23 @@ const app = express();
 app.use(express.json());
 app.use("/api", analyzeRoute);
 
+
+
+app.get("/", (_req, res) => {
+  res.json({
+    service: "QA Autonomous Copilot API",
+    status: "Running",
+    endpoints: {
+      health: "/health",
+      analyze: "POST /api/analyze"
+    }
+  });
+});
+
+
+
+
+
 app.get("/health", (_req, res) => {
   res.json({ status: "OK" });
 });
